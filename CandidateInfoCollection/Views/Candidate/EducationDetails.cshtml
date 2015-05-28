@@ -1,0 +1,47 @@
+﻿@model  CandidateInfoCollection.Models.EducationDetailsViewModel
+@{
+    ViewBag.Title = "EducationDetails";
+}
+<h2>@ViewBag.Title.</h2>
+
+@using (Html.BeginForm("EducationDetails", "Candidate", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.HighestQualification, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @*@Html.TextBoxFor(m => m.HighestQualification, new { @class = "form-control" })*@
+            @Html.DropDownListFor(m => m.HighestQualification, new SelectListItem[]{
+                new SelectListItem() {Text = "Masters", Value="Masters"},
+                new SelectListItem() {Text = "Bachelors", Value="Bachelors"},
+                new SelectListItem() {Text = "Diploma", Value="Diploma"}}, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.GroupCategory, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.GroupCategory, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.YearOfCompletion, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.YearOfCompletion, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.UniversityDetails, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.UniversityDetails, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-primary" value="Next" />
+        </div>
+    </div>
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

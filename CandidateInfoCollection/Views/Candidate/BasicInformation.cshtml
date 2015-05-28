@@ -1,0 +1,70 @@
+﻿@model  CandidateInfoCollection.Models.BasicInfoViewModel
+@{
+    ViewBag.Title = "Basic Information";
+}  
+
+<h2>@ViewBag.Title.</h2>
+
+<script>
+    $(document).ready(function () {
+        $('.datepicker').datepicker({
+            format: "dd/mm/yyyy",
+            todayBtn: "linked",
+            autoclose: true,
+            todayHighlight: true
+        });
+    });
+</script>
+
+@using (Html.BeginForm("BasicInformation", "Candidate", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{    
+    <div class="form-group">
+        @Html.LabelFor(m => m.FirstName, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.MiddleName, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.MiddleName, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.LastName, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+        </div>
+    </div>
+
+
+    
+    <div class="form-group date">
+        @Html.LabelFor(m => m.DateOfBirth, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            <input class="datepicker form-control" data-date-language="en-US" type="text" id="datepicker" name="DateOfBirth" data-val="true" value=""
+                   data-val-required="The Date Of Birth field is required." />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-2 col-md-offset-2">
+            <input type="submit" class="btn btn-primary" value="Next" />
+        </div>
+    </div>
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+  
+}
+
+
+
+@section Scripts {
+@Scripts.Render("~/bundles/jqueryval")   
+}
+
+
+
+
+
+
+
