@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="panel panel-group" id="tabs">        
+    <ul class="nav nav-tabs" style="" >
+        @if (ViewBag.ActiveView == "BasicInformation" || ViewBag.ActiveView == null)
+        {
+            <li class="active"><a href="@Url.Action("GetBasicInformation", "Candidate")">Basic Information</a></li>
+        }
+        else
+        {
+            <li><a href="@Url.Action("GetBasicInformation", "Candidate")">Basic Information</a></li>            
+        }
+
+        @if (ViewBag.ActiveView == "ContactDetails")
+        {
+            <li class="active"><a href="@Url.Action("GetContactDetails", "Candidate")">Contact Details</a></li>
+        }
+        else
+        {
+            <li><a href="@Url.Action("GetContactDetails", "Candidate")">Contact Details</a></li>
+        }
+
+        @if (ViewBag.ActiveView == "EducationDetails")
+        {
+            <li class="active"><a href="@Url.Action("GetEducationDetails", "Candidate")">Education Details</a></li>
+        }
+        else
+        {
+            <li><a href="@Url.Action("GetEducationDetails", "Candidate")">Education Details</a></li>
+        }
+
+        @if (ViewBag.ActiveView == "CareerDetails")
+        {
+            <li class="active"><a href="@Url.Action("GetCareerDetails", "Candidate")">Career Details</a></li>
+        }
+        else
+        {
+            <li><a href="@Url.Action("GetCareerDetails", "Candidate")">Career Details</a></li>
+        }
+    </ul>
+    <div class="tab-content">
+        @if(ViewBag.ActiveView == "BasicInformation" || ViewBag.ActiveView == null)
+        { 
+            <div id="pane1" class="tab-pane active">
+                @RenderPage("BasicInformation.cshtml", new {BasicInfoViewModel = Model })            
+            </div>
+        }
+      
+        
+        @if (ViewBag.ActiveView == "ContactDetails")
+        {
+            <div id="pane2" class="tab-pane active">
+                @RenderPage("ContactDetails.cshtml", new { ContactDetailsViewModel = Model })
+            </div>
+        }
+
+        @if (ViewBag.ActiveView == "EducationDetails")
+        {
+            <div id="pane3" class="tab-pane active">
+                @RenderPage("EducationDetails.cshtml", new { EducationDetailsViewModel = Model })
+            </div>
+        }
+
+
+        @if (ViewBag.ActiveView == "CareerDetails")
+        {
+            <div id="pane4" class="tab-pane active">
+                @RenderPage("CareerDetails.cshtml", new { CareerDetailsViewModel = Model })
+            </div>
+        }
+    </div>
+</div>
+
+

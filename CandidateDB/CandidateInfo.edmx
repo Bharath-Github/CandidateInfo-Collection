@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CandidateInfoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BasicInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateOfBirth" Type="date" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CareerDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="RecentJobRole" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="DurationYears" Type="nchar" MaxLength="2" Nullable="false" />
+          <Property Name="DurationMonths" Type="nchar" MaxLength="2" Nullable="false" />
+          <Property Name="StillInCurrentRole" Type="bit" Nullable="false" />
+          <Property Name="Resume" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CoverLetter" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsPrivacyDetailsAccepted" Type="bit" Nullable="false" />
+          <Property Name="IsDeclarationChecked" Type="bit" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ContactDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="StreetDetails" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Suburb" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NearestRailwayStation" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Postcode" Type="nchar" MaxLength="4" Nullable="false" />
+          <Property Name="PhoneNumber" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="MobileNumber" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EducationDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="HighestQualification" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="GroupCategory" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="YearOfCompletion" Type="date" Nullable="false" />
+          <Property Name="UniversityDetails" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="CandidateInfoModelStoreContainer">
+          <EntitySet Name="BasicInfo" EntityType="Self.BasicInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CareerDetails" EntityType="Self.CareerDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ContactDetails" EntityType="Self.ContactDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EducationDetails" EntityType="Self.EducationDetails" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CandidateInfoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BasicInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="CareerDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="RecentJobRole" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="DurationYears" Type="String" MaxLength="2" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="DurationMonths" Type="String" MaxLength="2" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="StillInCurrentRole" Type="Boolean" Nullable="false" />
+          <Property Name="Resume" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CoverLetter" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsPrivacyDetailsAccepted" Type="Boolean" Nullable="false" />
+          <Property Name="IsDeclarationChecked" Type="Boolean" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="ContactDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="StreetDetails" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Suburb" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NearestRailwayStation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Postcode" Type="String" MaxLength="4" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="MobileNumber" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="EducationDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="HighestQualification" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="GroupCategory" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="YearOfCompletion" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="UniversityDetails" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityContainer Name="CandidateInfoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BasicInfoes" EntityType="Self.BasicInfo" />
+          <EntitySet Name="CareerDetails" EntityType="Self.CareerDetail" />
+          <EntitySet Name="ContactDetails" EntityType="Self.ContactDetail" />
+          <EntitySet Name="EducationDetails" EntityType="Self.EducationDetail" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CandidateInfoModelStoreContainer" CdmEntityContainer="CandidateInfoEntities">
+          <EntitySetMapping Name="BasicInfoes">
+            <EntityTypeMapping TypeName="CandidateInfoModel.BasicInfo">
+              <MappingFragment StoreEntitySet="BasicInfo">
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CareerDetails">
+            <EntityTypeMapping TypeName="CandidateInfoModel.CareerDetail">
+              <MappingFragment StoreEntitySet="CareerDetails">
+                <ScalarProperty Name="RecentJobRole" ColumnName="RecentJobRole" />
+                <ScalarProperty Name="DurationYears" ColumnName="DurationYears" />
+                <ScalarProperty Name="DurationMonths" ColumnName="DurationMonths" />
+                <ScalarProperty Name="StillInCurrentRole" ColumnName="StillInCurrentRole" />
+                <ScalarProperty Name="Resume" ColumnName="Resume" />
+                <ScalarProperty Name="CoverLetter" ColumnName="CoverLetter" />
+                <ScalarProperty Name="IsPrivacyDetailsAccepted" ColumnName="IsPrivacyDetailsAccepted" />
+                <ScalarProperty Name="IsDeclarationChecked" ColumnName="IsDeclarationChecked" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContactDetails">
+            <EntityTypeMapping TypeName="CandidateInfoModel.ContactDetail">
+              <MappingFragment StoreEntitySet="ContactDetails">
+                <ScalarProperty Name="StreetDetails" ColumnName="StreetDetails" />
+                <ScalarProperty Name="Suburb" ColumnName="Suburb" />
+                <ScalarProperty Name="NearestRailwayStation" ColumnName="NearestRailwayStation" />
+                <ScalarProperty Name="Postcode" ColumnName="Postcode" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EducationDetails">
+            <EntityTypeMapping TypeName="CandidateInfoModel.EducationDetail">
+              <MappingFragment StoreEntitySet="EducationDetails">
+                <ScalarProperty Name="HighestQualification" ColumnName="HighestQualification" />
+                <ScalarProperty Name="GroupCategory" ColumnName="GroupCategory" />
+                <ScalarProperty Name="YearOfCompletion" ColumnName="YearOfCompletion" />
+                <ScalarProperty Name="UniversityDetails" ColumnName="UniversityDetails" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

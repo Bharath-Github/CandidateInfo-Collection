@@ -1,0 +1,70 @@
+﻿@model  CandidateInfoCollection.Models.CareerDetailsViewModel
+@{
+    ViewBag.Title = "CareerDetails";
+}
+
+<h2>@ViewBag.Title.</h2>
+
+@using (Html.BeginForm("CareerDetails", "Candidate", FormMethod.Post,new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+{    
+    <div class="form-group">
+        @Html.LabelFor(m => m.RecentJobRole, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.RecentJobRole, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.DurationYears, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.DurationYears, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.DurationMonths, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.DurationMonths, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-2"></div>
+        <div class="col-md-10 row" style="margin-left:2px">
+            @Html.CheckBoxFor(m => m.StillInCurrentRole, new { Style = "margin-left:2px" })
+            @Html.Label("Still in Current Role", new { Style = "margin-left:2px" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Resume, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Resume, new { @class = "form-control",type = "file" })
+            <!--<input type="file" name="resumeupload" />-->          
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.CoverLetter, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            <!--<input type="file" name="coverletterupload"/>-->
+            @Html.TextBoxFor(m => m.CoverLetter, new { @class = "form-control",type = "file" })
+        </div>
+    </div>
+    
+    <div class="form-group">
+         @*@Html.DisplayNameFor(m => m.IsPrivacyDetailsAccepted, new { @class = "col-md-2 control-label" })*@
+        <div class="col-md-2"></div>
+        <div class="col-md-10 row" style="margin-left:2px">            
+                @Html.CheckBoxFor(m => m.IsPrivacyDetailsAccepted, new { Style = "margin-left:2px" })            
+                @Html.Label("I accept", new { Style = "margin-left:2px" })           
+                @Html.CheckBoxFor(m => m.IsDeclarationChecked, new { Style = "margin-left:15px" })
+                @Html.Label("Declaration", new { Style = "margin-left:2px" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-primary" value="Submit" />
+        </div>
+    </div>
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
