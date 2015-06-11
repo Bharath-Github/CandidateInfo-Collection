@@ -8,3 +8,13 @@ C:\MyWorks\CandidateInfoCollection\CandidateDAL\bin\Debug\EntityFramework.xml
 C:\MyWorks\CandidateInfoCollection\CandidateDAL\bin\Debug\EntityFramework.SqlServer.xml
 C:\MyWorks\CandidateInfoCollection\CandidateDAL\obj\Debug\CandidateDAL.dll
 C:\MyWorks\CandidateInfoCollection\CandidateDAL\obj\Debug\CandidateDAL.pdb
+C:\downloads\clone\CandidateInfoCollection\CandidateDAL\bin\Debug\CandidateDAL.dll.config
+C:\downloads\clone\CandidateInfoCollection\CandidateDAL\bin\Debug\CandidateDAL.dll
+C:\downloads\clone\CandidateInfoCollection\CandidateDAL\bin\Debug\CandidateDAL.pdb
+C:\downloads\clone\CandidateInfoCollection\CandidateDAL\bin\Debug\EntityFramework.dll
+C:\downloads\clone\CandidateInfoCollection\CandidateDAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\downloads\clone\CandidateInfoCollection\CandidateDAL\bin\Debug\EntityFramework.xml
+C:\downloads\clone\CandidateInfoCollection\CandidateDAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\downloads\clone\CandidateInfoCollection\CandidateDAL\obj\Debug\CandidateDAL.csprojResolveAssemblyReference.cache
+C:\downloads\clone\CandidateInfoCollection\CandidateDAL\obj\Debug\CandidateDAL.dll
+C:\downloads\clone\CandidateInfoCollection\CandidateDAL\obj\Debug\CandidateDAL.pdb
