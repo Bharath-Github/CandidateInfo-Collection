@@ -339,9 +339,9 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CandidateDB\CandidateDB.csproj">
-      <Project>{d1bb9576-e104-4f76-bfab-8f63180c8f10}</Project>
-      <Name>CandidateDB</Name>
+    <ProjectReference Include="..\CandidateDAL\CandidateDAL.csproj">
+      <Project>{5e6931fe-643a-4a9f-af1d-104d49c6f5d2}</Project>
+      <Name>CandidateDAL</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

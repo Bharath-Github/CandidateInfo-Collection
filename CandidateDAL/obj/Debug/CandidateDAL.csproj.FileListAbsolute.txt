@@ -1,0 +1,10 @@
+C:\MyWorks\CandidateInfoCollection\CandidateDAL\obj\Debug\CandidateDAL.csprojResolveAssemblyReference.cache
+C:\MyWorks\CandidateInfoCollection\CandidateDAL\bin\Debug\CandidateDAL.dll.config
+C:\MyWorks\CandidateInfoCollection\CandidateDAL\bin\Debug\CandidateDAL.dll
+C:\MyWorks\CandidateInfoCollection\CandidateDAL\bin\Debug\CandidateDAL.pdb
+C:\MyWorks\CandidateInfoCollection\CandidateDAL\bin\Debug\EntityFramework.dll
+C:\MyWorks\CandidateInfoCollection\CandidateDAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\MyWorks\CandidateInfoCollection\CandidateDAL\bin\Debug\EntityFramework.xml
+C:\MyWorks\CandidateInfoCollection\CandidateDAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\MyWorks\CandidateInfoCollection\CandidateDAL\obj\Debug\CandidateDAL.dll
+C:\MyWorks\CandidateInfoCollection\CandidateDAL\obj\Debug\CandidateDAL.pdb

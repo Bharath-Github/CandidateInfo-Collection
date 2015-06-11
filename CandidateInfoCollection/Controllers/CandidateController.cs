@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using CandidateInfoCollection.Models;
 using System.IO;
-using CandidateDB;
+using CandidateDAL;
 
 namespace CandidateInfoCollection.Controllers
 {
@@ -122,17 +122,21 @@ namespace CandidateInfoCollection.Controllers
                 ViewBag.ActiveView = "CareerDetails";
             }
             else
-            {
+            {   
                 ViewBag.ActiveView = "EducationDetails";               
             }
             return View("Index");
         }
 
         [HttpPost]
-        public ActionResult CareerDetails(CareerDetailsViewModel Model)
+        public ActionResult CareerDetails(CareerDetailsViewModel Model,FormCollection collectn)
         {
             if(ModelState.IsValid)            
-            {
+            {                
+                string StillInCurrentRole = ((string[])(collectn.GetValue("StillInCurrentRole").RawValue))[0].ToString();
+                string PrivacyDetails = ((string[])(collectn.GetValue("IsPrivacyDetailsAccepted").RawValue))[0].ToString();
+                string Declaration =  ((string[])(collectn.GetValue("IsDeclarationChecked").RawValue))[0].ToString();
+
                 if (Model.Resume.FileName.Length > 0)
                 {
                     var fileName = Path.GetFileName(Model.Resume.FileName);
@@ -152,14 +156,16 @@ namespace CandidateInfoCollection.Controllers
                 obj.RecentJobRole = Model.RecentJobRole;
                 obj.DurationYears = Model.DurationYears;
                 obj.DurationMonths = Model.DurationMonths;
-                obj.StillInCurrentRole = Model.StillInCurrentRole;
+                obj.StillInCurrentRole = Convert.ToBoolean(StillInCurrentRole.CompareTo("true"));
+                    
                 obj.Resume = Model.Resume.FileName;
                 obj.CoverLetter = Model.CoverLetter.FileName;
-                obj.IsPrivacyDetailsAccepted = Model.IsPrivacyDetailsAccepted;
-                obj.IsDeclarationChecked = Model.IsDeclarationChecked;
+                obj.IsPrivacyDetailsAccepted = Convert.ToBoolean(PrivacyDetails.CompareTo("true"));
+                obj.IsDeclarationChecked = Convert.ToBoolean(Declaration.CompareTo("true"));
 
                 repository.Insert(obj);
                 repository.Save();
+
                 ViewBag.ActiveView = "BasicInformation";                
             }
             else

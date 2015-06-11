@@ -53,5 +53,5 @@ C:\MyWorks\CandidateInfoCollection\CandidateInfoCollection\bin\Microsoft.Owin.Se
 C:\MyWorks\CandidateInfoCollection\CandidateInfoCollection\obj\Debug\CandidateInfoCollection.dll
 C:\MyWorks\CandidateInfoCollection\CandidateInfoCollection\obj\Debug\CandidateInfoCollection.pdb
 C:\MyWorks\CandidateInfoCollection\CandidateInfoCollection\obj\Debug\CandidateInfoCollection.csprojResolveAssemblyReference.cache
-C:\MyWorks\CandidateInfoCollection\CandidateInfoCollection\bin\CandidateDB.dll
-C:\MyWorks\CandidateInfoCollection\CandidateInfoCollection\bin\CandidateDB.pdb
+C:\MyWorks\CandidateInfoCollection\CandidateInfoCollection\bin\CandidateDAL.dll
+C:\MyWorks\CandidateInfoCollection\CandidateInfoCollection\bin\CandidateDAL.pdb

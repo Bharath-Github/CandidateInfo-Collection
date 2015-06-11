@@ -96,13 +96,11 @@ namespace CandidateInfoCollection.Models
         [Required(ErrorMessage = "Please enter the No of years worked")]
         [Display(Name = "DurationYears")]
         [MaxLength(2, ErrorMessage = "No of years cannot be longer than 2 characters.")]
-        [DataType(DataType.Duration)]
         public string DurationYears { get; set; }
 
         [Required(ErrorMessage = "Please enter the No of months worked")]
         [Display(Name = "DurationMonths")]
         [MaxLength(2, ErrorMessage = "No of months cannot be longer than 2 characters.")]
-        [DataType(DataType.Duration)]
         public string DurationMonths { get; set; }
 
         [Required(ErrorMessage = "Please provide details of your current employment")]
